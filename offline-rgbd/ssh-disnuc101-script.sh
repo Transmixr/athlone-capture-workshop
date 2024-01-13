@@ -1,0 +1,1 @@
+ssh dis@disnuc101.huiskamer.private 'cmd /c "C:\Program Files\Azure Kinect SDK v1.4.1\tools\k4arecorder" --device 0 --record-length 10 --color-mode 1536p --depth-mode NFOV_UNBINNED --rate 30 --imu OFF --external-sync Master --sync-delay 0 --exposure-control 33000  test_01132112_disnuc101.mkv 2^> test_01132112_disnuc101_error.txt && echo All done && exit'
