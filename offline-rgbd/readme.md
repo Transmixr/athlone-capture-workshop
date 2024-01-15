@@ -20,8 +20,11 @@ Here is a possible arrangement of cameras: [jack-suggestion-camera-placement.pdf
 ## Checklist
 
 - Check that all NUCs are synced to the same NTP server with a decent NTP client (www.timesynctool.com has a good one I've used often)
+	- Ensure they're all on Irish time
 - obviously ssh access needs to work
 	- With a keypair would be best
+- Check (Microsoft remote desktop) that all Kinect cameras are on manual whitebalance, manual exposure (the whitebalance setting is not part of `k4arecord` it uses uses as-is)
+- Check that all Kinect cameras are on MJPEG. This setting seems to reset whenever a camera is reconnected or something?
 - Don't forget: for Kinects it is best to start the master last, but for realsenses it is best to start the master first.
 - After the session: ensure that all files have been copied, and are a decent size. 
 	- Trying to play them back in `kinect_viewer` or `realsense_viewer` is probably a good idea.
