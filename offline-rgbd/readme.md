@@ -16,6 +16,12 @@ Here is a possible arrangement of cameras: [jack-suggestion-camera-placement.pdf
 
 - Ensure that the NUCs can handle the size/framerate we selected
 - Ensure that the NUCs have enough free diskspace (at least for a single session).
+- Add `C:\Program Files\Azure Kinect SDK v1.4.1\tools` to the `PATH` of the central machine (so it is easier to check the recordings)
+- Fix `rs-python-recorder.py`.
+- All NUCs must have recent Realsense and Kinect software.
+- All NUCs must have a recent Python
+- All NUCs must have `pyrealsense2` installed
+- All NUCs must have this repo checked out (or have a copy of it).
 
 ## Checklist
 
@@ -38,3 +44,4 @@ Here is a possible arrangement of cameras: [jack-suggestion-camera-placement.pdf
 	- Asked Nacho about the `sync_delay` stuff. Luckily he remembered: this is to forestall interference with the IR beacons. Details are at <https://learn.microsoft.com/en-us/azure/kinect-dk/multi-camera-sync> but the 160uS should work fine.
 - `ssh-disnuc101-script.sh` is a first step at doing that over ssh.
 	- We have to think about how to control multiple machines (especially stop time). Maybe open 8 `Terminal` windows, and then type control-C when done?
+- `capture-ssh.sh` is a first stab at the capture script. To be run on a Mac.
