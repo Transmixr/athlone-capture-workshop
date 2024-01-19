@@ -8,6 +8,13 @@
 # First import the library
 import sys
 import pyrealsense2 as rs
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--master", action="store_true")
+parser.add_argument("--slave", action="store_true")
+parser.add_argument("filename", action="store")
+args = parser.parse_args()
 
 try:
     # Create a context object. This object owns the handles to all connected realsense devices
@@ -15,10 +22,10 @@ try:
 
     # Configure streams
     config = rs.config()
-    config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)
-    config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)
+    config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 15)
+    config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 15)
     # xxxjack set important camera parameters
-    config.enable_record_to_file(sys.argv[1])
+    config.enable_record_to_file(args.filename)
     # Start streaming
     pipeline.start(config)
 
