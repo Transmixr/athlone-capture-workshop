@@ -1,11 +1,13 @@
-if [ $# -ne 1 ]; then
-    echo Usage $0 session name
+if [ $# -ne 2 ]; then
+    echo Usage $0 sessionname basedir
     exit 1
 fi
 sessionname=$1
+basedir=$2
 
-mkdir ${sessionname}
+mkdir ${basedir}/${sessionname}
 for remote in dis@disnuc101.local dis@disnuc103.local dis@disnuc202.local dis@disnuc301.local iti-nuc@iti-nuc-01.local iti-nuc@iti-nuc-02.local iti-nuc@iti-nuc-03.local iti-nuc@iti-nuc-04.local; do
-    scp -i ~/.ssh/id_disnuc ${remote}:*.mkv ${sessionname}/
-    scp -i ~/.ssh/id_disnuc ${remote}:*_error.txt ${sessionname}/
+    scp -i ~/.ssh/id_disnuc ${remote}:*.bag ${basedir}/${sessionname}/
+    scp -i ~/.ssh/id_disnuc ${remote}:*.mkv ${basedir}/${sessionname}/
+    scp -i ~/.ssh/id_disnuc ${remote}:*_error.txt ${basedir}/${sessionname}/
 done

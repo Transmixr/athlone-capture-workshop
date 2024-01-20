@@ -14,7 +14,7 @@ fi
 
 colormode=1080p
 depthmode=NFOV_UNBINNED
-rate=30
+rate=5
 
 ssh_in_terminal() {
     local where="$1"
@@ -65,3 +65,5 @@ ssh_in_terminal iti-nuc@iti-nuc-01.local "${remote_cmd}"
 sleep 1
 remote_cmd=`remote_command disnuc301 ${sessionname} 0 Master 480`
 ssh_in_terminal dis@disnuc301.local "${remote_cmd}"
+sleep 1
+

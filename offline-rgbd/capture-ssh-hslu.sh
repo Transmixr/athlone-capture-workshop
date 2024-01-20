@@ -12,9 +12,9 @@ if [ -d ${sessionname} ]; then
     exit 1
 fi
 
-colormode=1080p
-depthmode=NFOV_UNBINNED
-rate=30
+colormode=3072p
+depthmode=OFF
+rate=15
 
 ssh_in_terminal() {
     local where="$1"
@@ -36,7 +36,7 @@ remote_command() {
     local syncmode="$4"
     local syncdelay="$5"
     
-    echo "cmd /k \\\"C:/Program Files/Azure Kinect SDK v1.4.1/tools/k4arecorder\\\" --gain 128 --device ${devicenum} --color-mode ${colormode} --depth-mode ${depthmode} --rate ${rate} --imu OFF --external-sync ${syncmode} --sync-delay ${syncdelay} --exposure-control 20000 ${hostname}_${devicenum}_${sessionid}.mkv 2^> ${hostname}_${devicenum}_${sessionid}_error.txt"
+    echo "cmd /k \\\"C:/Program Files/Azure Kinect SDK v1.4.1/tools/k4arecorder\\\" --gain 128 --device ${devicenum} --color-mode ${colormode} --depth-mode ${depthmode} --rate ${rate} --imu OFF --external-sync ${syncmode} --exposure-control 33330 ${hostname}_${devicenum}_${sessionid}.mkv 2^> ${hostname}_${devicenum}_${sessionid}_error.txt"
 }
 
 set -vx

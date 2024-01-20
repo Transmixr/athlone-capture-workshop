@@ -40,28 +40,20 @@ remote_command() {
 }
 
 set -vx
-#  42
-# remote_cmd=`remote_command disnuc103 ${sessionname} 0 Sub 160` 42
-# ssh_in_terminal dis@disnuc103.local "${remote_cmd}" 42
-# sleep 1 42
-# remote_cmd=`remote_command disnuc202 ${sessionname} 0 Sub 320` 42
-# ssh_in_terminal dis@disnuc202.local "${remote_cmd}" 42
-# sleep 1 42
-# remote_cmd=`remote_command disnuc301 ${sessionname} 0 Sub 480` 42
-# ssh_in_terminal dis@disnuc301.local "${remote_cmd}" 42
-# sleep 1 42
-# remote_cmd=`remote_command iti-nuc-02 ${sessionname} 0 Sub 800` 42
-# ssh_in_terminal iti-nuc@iti-nuc-02.local "${remote_cmd}" 42
-# sleep 1 42
-# remote_cmd=`remote_command iti-nuc-03 ${sessionname} 0 Sub 960` 42
-# ssh_in_terminal iti-nuc@iti-nuc-03.local "${remote_cmd}" 42
-# sleep 1 42
-# remote_cmd=`remote_command iti-nuc-04 ${sessionname} 0 Sub 1120` 42
-# ssh_in_terminal iti-nuc@iti-nuc-04.local "${remote_cmd}" 42
-# sleep 1 42
+remote_cmd=`remote_command disnuc103 ${sessionname} 0 Sub 160` 42
+ssh_in_terminal dis@disnuc103.local "${remote_cmd}" 42
+remote_cmd=`remote_command disnuc202 ${sessionname} 0 Sub 320` 42
+ssh_in_terminal dis@disnuc202.local "${remote_cmd}" 42
+remote_cmd=`remote_command disnuc301 ${sessionname} 0 Sub 480` 42
+ssh_in_terminal dis@disnuc301.local "${remote_cmd}" 42
+remote_cmd=`remote_command iti-nuc-02 ${sessionname} 0 Sub 800` 42
+ssh_in_terminal iti-nuc@iti-nuc-02.local "${remote_cmd}" 42
+remote_cmd=`remote_command iti-nuc-03 ${sessionname} 0 Sub 960` 42
+ssh_in_terminal iti-nuc@iti-nuc-03.local "${remote_cmd}" 42
+remote_cmd=`remote_command iti-nuc-04 ${sessionname} 0 Sub 1120` 42
+ssh_in_terminal iti-nuc@iti-nuc-04.local "${remote_cmd}" 42
 
 remote_cmd=`remote_command disnuc101 ${sessionname} 0 Sub 640`
 ssh_in_terminal dis@disnuc101.local "${remote_cmd}"
-sleep 1
-# remote_cmd=`remote_command iti-nuc-01 ${sessionname} 0 Master 0`
-# ssh_in_terminal iti-nuc@iti-nuc-01.local "${remote_cmd}"
+remote_cmd=`remote_command iti-nuc-01 ${sessionname} 0 Master 0`
+ssh_in_terminal iti-nuc@iti-nuc-01.local "${remote_cmd}"
