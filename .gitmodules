@@ -1,0 +1,3 @@
+[submodule "hslu/vvvis"]
+	path = hslu/vvvis
+	url = https://github.com/thegenerativegeneration/vvvis.git
